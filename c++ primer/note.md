@@ -26,3 +26,24 @@ float
 double 
 long double
 ```
+
+tips:unsigned + int 会把 int 转为 unsigned
+
+对于一个extern操作，表示声明但是未定义，并且这个操作是不支持初始化的
+而一个显式的(int) 则是声明而且定义
+
+
+对于每个名字都会有一个定义域
+```c++
+int i = 10;
+int main() {
+    int i = 5;
+    cout << i << ' ' << ::i << endl;
+}
+
+
+
+```
+
+
+
