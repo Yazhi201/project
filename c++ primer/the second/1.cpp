@@ -1,40 +1,35 @@
 #include <iostream>
-// #include "2.h"
+#include <string>
+#include <vector>
+#include <cstring>
+
 using namespace std;
 
-// int i = 10;
-
-// struct nod;
-// int x=3;
-
-// constexpr x;
-
-// struct Foo {
-
-// }
-
-using std::cin, std::cout;
+typedef int int_array[4];
 
 int main() {
-    // int i = 0, &r = i;
-    // auto a = r;
-    // const int ci = i, &cr = ci;
-    // auto b = ci;
-    // auto c = cr;
-    // auto d = &i;
-    // auto e = &ci;
-    // const auto f = ci;
-    // const auto &g = ci;
-    // // auto &h = 42;
-    // // const auto &j = 42;
-    // cout << g << endl;
-    // g = 5;
-    // int a = 1,b = 2;
-    // decltype(a = b) x;
-
+    // int a[3][4];
+    // int i=0;
+    // for (auto &row : a)
+    //     for (auto &col : row)
+    //         col = ++i;
+    // for (auto row : a[1])
+    //     cout << row << ' ';
+    // int_array k{0,1,2,3};
+    // cout << k[0] << endl;
+    bool b = 1;
+    // cout << -7 % -2 << endl;
+    const char cp[20] = "hello world";
+    // cout << cp[0] << ' ' << cp << endl;
+    int a[20]{0};
+    // cout << a[10] << endl;
+    // if (cp && *cp) ;
+    // printf("%p", &cp);
+    cout << &a << endl;
 }
 
 
 
 
 
+ 

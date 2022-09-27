@@ -94,4 +94,183 @@ using SI = Sales_item
 
 ```
 
+### 3.2 string
+
+```c++
+//string包含在头文件 string中 
+#include <string>
+using std::string
+
+//初始化的方法
+
+string s1;
+string s2(s1);
+string s2 = s1;
+string s3("value");
+string s3 = "value";
+string s4(n, 'c');
+string s8 = string(10, 'c');
+
+getline(is, s)
+s.empty();
+s.size();
+
+使用cin读入string的时候,自动忽略开头的空白(空格符,换行符,制表符),遇到下一个空白结束
+
+读入:"    Hello World     "
+输出:"Hello"
+
+getline 读取一整行,读入换行符,但是不存储换行符
+getline(cin, line);
+
+s.size(); 
+返回的东西是string::size_type(无符号整数) 类型的
+string 比较是比较的字典序
+string + 必须保证两个中有一个是string类型才可以
+
+for (auto c : str) {
+    cout << c << endl;
+}
+
+输出每个字符
+
+如果想改变其中的一个字符,需要使用引用类型
+
+for (auto &c : str) {
+    c = 'a';
+}
+
+
+```
+
+
+c++库里面提供了is开头的一系列函数表示这个字符是啥(具体翻书)
+
+### 3.3 vector
+
+早期vector嵌套vector
+vector<vector<int> >
+必须有一个空格
+
+```c++
+vector<int> v1;
+vector<int> v2(v1);
+vector<int> v2 = v1;
+vector<int> v3(n,val);
+vector<int> v4(n);
+vector<int> v2{a,b,c,d...};
+vector<int> v2={a,b,c,d...};
+列表初始化只能用花括号
+这样是错的：vector<string> v1("a", "an", "the");
+correct: vector<string> v2{"a", "an", "the"};
+默认初始化的为空
+
+
+
+有关一些初始化的例子
+vector<int> v1(10);
+vector<int> v1{10};
+vector<int> v1{10, 1};
+vector<int> v1(10, 1);
+
+vector<string> v8(10,"hi"); 
+but  vector<string> v8("hi");   //错误的
+
+
+基本操作
+v.empty()
+v.size()
+v.push_back(t)
+v[n]
+v1 = v2
+v1 = {a,b,c,d...}
+v1 == v2
+v1 != v2
+<, <=, >, >=(按照字典序进行排序)
+
+vector<int>::size_type
+vector::size_type(错误的)
+
+
+```
+
+
+
+
+### 3.6 多维数组
+```c++
+初始化
+int arr[100][200] = {0};    //全部初始化为0
+int ia[3][4] = {
+    {0, 1, 2, 3},   
+    {0, 1, 2, 3},
+    {0, 1, 2, 3},
+}
+
+int ia[3][4] = {0,1,2,3,4,5,6,7,8,9,10,11};
+
+int ia[3][4] = {{ 0 }, { 4 }, { 8 }};   //给每一行的第一个数初始化，其他默认初始化
+
+int ia[3][4] = {0, 1, 2, 3};
+//初始化第一行
+
+当前遍历a数组，如果使用auto
+    for (auto &row : a)
+        for (auto col : row)
+row必须加上引用，不然会认为row是一个 int*
+
+```
+
+类型别名简化多维数组的指针
+```c++
+using int_array = int[4];
+typedef int int_array[4];
+这两个等价
+```
+
+## 4.1 基础
+```c++
+
+一元运算符：& * 
+
+二元运算符：== * 
+
+赋值运算符 一个左值 生成一个左值
+取地址符：作用于左值 返回一个指向该对象的指针，这个指针是个右值
+
+cin >> v1 >> v2; 先读入v1,v2
+
+<< 运算符 顺序i未定义
+so undefined:
+cout << i << " " << ++i << endl;
+
+在bool类型参与计算的时候，很多情况下会被转换成int
+% 必须是两个整数，而且结果有可能是负数，m%n的符号和m的符号相同
+除法 一律向0取整，即抛弃小数位
+
+if (i < j < k) //k大于1则为真
+
+
+char c[20];
+cout << c << endl;
+此时会输出整个字符串
+如果想输出地址
+cout << &c << endl;
+如果输出第一个字符
+cout << *c << endl;
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
