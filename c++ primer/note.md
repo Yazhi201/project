@@ -60,5 +60,38 @@ int *p = &ival;
 两个对象类型必须保证时刻相等
 ```
 
+void* 是一种特殊的指针，可以存放人一对象的地址
+但不能使用void来访问对象
+
+### 2.4 const
+```c++
+const对象必须初始化
+
+constexpr 是常量类型
+
+const int *p = nullptr
+constexpr int *q = nullptr
+p是一个指向整数常量的指针
+q是一个指向整数的常量指针
+```
+
+### 2.5 类型别名
+```
+tpyedef double wages
+typedef wages base, *p
+using SI = Sales_item
+
+```
+
+多文件编译中如果需要重复使用多个头文件
+```c++
+#ifndef SALES_DATE_H
+#define SALES_DATE_H
+
+
+#endif
+使用这个操作，可以让每个头文件只展开一次
+
+```
 
 
