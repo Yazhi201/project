@@ -261,13 +261,95 @@ cout << *c << endl;
 
 ```
 
+++的一个用法
+```c++
+
+cout << *pbeg++ << endl;
+等价于
+cout << *pbeg << endl;
+++pbeg;
+先给pbeg++，然后返回一个之前的pbeg的副本，开始解引用
+所以输出的是pbeg刚开始指向的元素
+
+undefined:
+*beg = toupper(*beg++);
+
+```
+### 4.6 成员访问运算符
+
+```c++
+ptr->mem = (*ptr).mem
+
+
+```
+
+
+### 4.7 条件运算符(?:)
+```c++
+cond ? expr1 : expr2;
+
+finalgrade = (grade > 90) ? "high pass" 
+                : (grade < 60) ? "fail" : "pass";
+
+奇怪用法
+cout << (grade < 60);
+cout ? "fail" : "pass";
+
+
+条件运算符的优先级很低 所以一般需要带括号
 
 
 
 
+```
+
+
+### 4.8 位运算符
+```c++
+~
+<<
+>>
+&
+^
+|
+这些运算符同样适用于bitset
+
+如果给char类型是使用 ~ 操作
+会把 char 转换为 int ，空位补0
 
 
 
+```
+
+### sizeof运算符
+```c++
+sizeof  返回一条表达式，或者一个类型名字所占的字节数
+
+Sales_data data, *p;
+sizeofof(Sales_data);       //储存这个类型的对象所占的空间大小
+sizeof data;                //data的大小
+sizeof p;                   //指针所占的空间大小
+sizeof *p;                  //p所指向的类型的空间大小
+sizeof data.revenue;        //revenue成员的大小
+sizeof Sales_data::revenue  //另一种获取revenue大小的方法
+
+sizeof满足右结合律 因此
+sizeof *p = sizeof (*p)
+
+对数组进行sizeof运算，会返回整个数组所占空间大小，不会把数组转换为指针来处理
+```
+
+
+
+### 5.4 迭代语句
+
+
+```c++
+for ( ; ; ) ; 
+for (x : y);    //y需要保证是一个序列
+
+
+```
 
 
 
