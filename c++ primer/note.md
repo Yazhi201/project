@@ -444,11 +444,103 @@ int main(int argc, char argv[][]) {
 
 ```
 
+### 6.3 返回数组指针
 
-### 6.2.6 含有可变形参的函数
+```c++
 
-``
+int arr[10];    //含有10个整数的数组
+int *p1[10];    //p1是一个含有10个指针的数组
+int (*p2)[10] = &arr;   //p2是一个指针，指向含有10个整数的数组
+
+声明一个返回数组指针的函数（这个东西可以理解为一个二维数组类型）
+例子： int (*func(int i))[10];
+一维数组直接开普通指针就行了
+
+使用尾置返回类型：
+另外一种定义方式
+auto func(int i) -> int(*)[10];
+
+使用 decltype
+
+int odd[] = {1,3,5,7,9};
+int even[] = {0,2,4,6,8};
+decltype(odd) *arrPtr(int i) {
+    return (i & 2) ? &odd : &even;
+}
+返回的还是类似于一个二维数组的指针
+
+6.3.3 习题
+编写一个函数的声明，使其返回数组的引用并且该数组包含10个string对象
+string (& ty(int i)) [10] {};
+auto ty(int i) -> string (&)[10] {};
+decltype(s) &ty (int i) {};
+
+typedef string str[10];
+str &ty(int i) {};
+
+using str = string[10];
+str &ty(int i) {};
+
+感觉这几个用法还挺恶心的，希望能掌握把
+
+```
+
+
+### 6.4 函数重载
+
+```c++
+
+void print(const int *beg, const int *end);
+void print(const char *cp);
+void print(const int ia[],size_t size);
+
+int j[2] = {0,1};
+print("Hello world");
+print(j, end(j) - begin(j));
+print(begin(j), end(j));
+
+同一个作用域，同一个名字函数，接受的形参类型不一样，编译器根据传递的实参类型推断想要的是哪个函数
+
+//main函数；不能重载
+
+顶层const的形参无法和另一个没有顶层形参区分开来
+例子：
+Record lookup(Phone);
+Record lookup(const Phone);
+
+
+Record lookup(Phone);
+Record lookup(const Phone);
+
+但是如果形参是某种类型的指针或引用，此时的const是底层的
+
+
+Record lookup(Phone&);
+Record lookup(const Phone&);
+
+
+Record lookup(Phone*);
+Record lookup(const Phone*);
+
+这种全是合法的重定义
+
+```
+
+## 6.5 特殊用途语言特性
+
+### 6.5.1 默认实参
+
+```c++
+string screen(int ht = 24...)
+一个某个形参被赋予了初始值，那么以后所有的形参都必须带有默认值
+
+对于一个有默认实参的函数，我们可以给他任意个实参进行调用，只能省尾部的实参
+
+默认实参还可以不是
+
+```
 
 
 
 
+ 
