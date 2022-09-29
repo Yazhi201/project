@@ -349,9 +349,105 @@ for ( ; ; ) ;
 for (x : y);    //y需要保证是一个序列
 
 
+在 while 和 for 循环中嵌套 switch 语句，可以直接使用 continue 跳跃当前的进程，进入下一次迭代
+否则只有switch不可以使用 continue
 ```
 
 
+### 6.1.2 函数声明
+
+```c++
+函数名字必须在使用之前声明，函数只能定义一次，但是可以声明多次
+
+函数声明和定义的唯一区别是函数声明不需要函数体
+
+一般来说，函数声明放在头文件中，比较方便
+
+比如
+
+//cal.h头文件
+
+int mul(int x,int y);
+int dev(int x,int y);
+int add(int x,int y);
+int sub(int x,int y);
+
+
+//这个是主程序，使用了cal这个头文件
+
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cstring>
+
+#include "cal.h"
+
+
+int main() {
+    int x,y;
+    std::cin >> x >> y;
+    std::cout << mul(x, y) << std::endl;
+    std::cout << dev(x, y) << std::endl;
+    std::cout << sub(x, y) << std::endl;
+    std::cout << add(x, y) << std::endl;
+    
+
+
+
+}
+
+
+int mul(int x, int y) {
+    return x * y;
+}
+
+int dev(int x, int y) {
+    return x / y;
+}
+int sub(int x, int y) {
+    return x - y;
+}
+int add(int x, int y) {
+    return x + y;
+}
+
+
+
+
+```
+
+
+
+### 6.2 参数传递
+
+在有些函数中，如果使用拷贝操作会使得速度变慢
+
+这种情况下，直接使用引用可以加快效率
+
+### 6.25 main 处理命令行选项
+```c++
+main函数可以传输参数，比如
+
+main函数的参数只能这么写，没有别的写法
+
+int main(int argc, char *argv[]) {
+}
+
+
+int main(int argc, char argv[][]) {
+}
+
+上边两种形式都可以，argc表示输入了几个字符串，第0个字符串默认表示当前可执行文件的目录和名称
+
+所以我们默认所有东西从第一个开始
+
+```
+
+
+### 6.2.6 含有可变形参的函数
+
+``
 
 
 
