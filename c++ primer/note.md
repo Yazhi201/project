@@ -541,6 +541,22 @@ string screen(int ht = 24...)
 ```
 
 
-
-
+### 7.1 定义抽象数据类型
  
+```c++
+成员函数可以定义在外部，先在class内部声明，之后，使用Sales_item::定义在外部
+
+date::getday() const {};    //这个const的对象是this指针，表示我当前的函数操作不会改变当前class里的东西
+
+只有当类没有声明任何构造函数时，编译器才会自动生成默认构造函数
+
+一个构造函数
+
+struct Sales_data {
+    // Sales_data() = de
+
+}
+
+
+
+```

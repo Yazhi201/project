@@ -1,0 +1,82 @@
+rdi : *s
+rsi : *h
+
+rbx : *s
+rbp : *h
+
+//string_length对rdi中的东西求长度，返回到rax中
+
+
+r12d : s.size
+rdi  : *h
+rax  : h.size
+
+rdx : 1
+
+比较 s.size h.size
+if s.size != h.size {
+    rax = 1
+    return 1;
+}
+else:
+
+
+rax = s[0]
+if(rax s[0] = 0) {
+    return 0;
+} 
+else :
+
+rax = s[0]
+rbp = *h
+
+if(s[0] != h[0]) {
+    return 1;
+}
+
+
+rbx = s + 1
+rbp = h + 1
+rax = s[1]
+if(rax s[1] = 0) 
+
+
+
+
+
+
+```c
+
+int string_length(char *s) {
+    return strlen(s);
+}
+
+bool strings_not_equal(char *s, char *h) {
+    int l1 = strlen(s);
+    int l2 = strlen(h);
+    if(l1 != l2) return 1;
+    for (int i = 0; i < l1; i++) {
+        if(s[i] != h[i]) return 1;
+    }
+    return 0;
+}
+
+```
+
+rsp - 0x28
+rsi = rsp
+rdi = *s
+
+
+rsp - 0x18
+rdx = rsi
+
+rcx = 4 + rsi
+rax = 0x14 + rsi
+
+rsp + 0x8 = rax
+
+
+
+
+
