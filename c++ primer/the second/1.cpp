@@ -70,9 +70,9 @@ void screen(int h = 20, int r = 30, char s = 'c') {
 }
 
 int main() {
-    screen();
-    screen();
-
+    //screen();
+    //screen();
+    cout << ((50 ** "3"));
 
 
 }

@@ -79,4 +79,173 @@ rsp + 0x8 = rax
 
 
 
+rsp - 0x18
+rcx = rsp + 0xc
+rdx = rsp + 0x8
+
+rsi = 0x4025cf
+rax = 0
+
+if(rax <= 0x1) bomb
+
+rax > 0x1
+
+(rsp + 0x8) <= 7
+rax = (rsp + 0x8)
+
+(rsp + 0x8) == 0    7c
+rax == 1            b9
+rax == 2            83
+rax == 3            8a
+rax == 4            91
+rax == 5            98
+rax == 6            9f
+rax == 7            a6            
+
+
+
+rcx = rsp + c
+rdx = rsp + 8
+esi = 0x4025cf
+//rax = 0
+cin >> rax
+if rax = 2
+if (rsp + 8) <= e
+rdx = e
+rsi = 0
+rdi = (rsp + 8) <= e
+
+rax = e 
+rax = rax - 0 = rax
+rcx = rax
+rcx = 0
+
+rax = e >> 1
+rcx = 7 + 0
+
+if(rcx <= rdi) //7 e {
+    rax = 0;
+    if(rcx >= rdi) return;
+
+    
+}
+else {
+    rdx = 7 - 1 = 6;
+
+
+}
+
+int rdx = e;
+//x <= e rdi = e
+//x >= 7 rdi = 7
+//x >= 3
+//x >= 1
+//x >= 0
+
+
+int func4(int x, int y) {
+    int rax = rdx;
+    rax -= rsi;
+    rax = rax + (rax >> 31);
+    rax >>= 1 ;
+
+    rcx = rax + rsi;
+    if(rcx <= x) {
+        return 0;
+    }
+    else {
+        rdx = rcx - 1;
+        func4(x, y);
+    }
+}
+
+
+rax = 0
+(rsp + c ) != 0
+
+
+
+
+
+
+
+rbx = char*
+rsp + 0x18 = %fs:028
+rax = 0
+
+数组的长度是6
+
+rax = 0
+rcx = (rbx + rax); rcx = s[0]
+(rsp) = rcx
+rdx = (rsp) = s[0]
+
+rdx = rdx & 0xf
+rdx = (0x4024b0+rdx)
+
+(rsp + rax + 0x10) = rdx
+
+rax ++
+
+(rsp + 16) = 0
+rsi = 0x40245e = "flyers"
+
+rdi = (rsp + 0x10)
+
+
+
+
+
+if(rax <= 5 && rax >= 0) {
+    r12d ++
+    if(r12d == 6) {
+        rsi = rsp + 0x18
+        rax = r14
+        rcx = 0x7
+        do {
+            rdx = rcx
+            rdx = rdx - (%rax)
+            (%ax) = rdx
+            rax += 4
+
+        } while(rax != rsi)
+        rsi = 0
+        rcx = (%rsp + %rsi)
+        if(rcx <= 1)
+        
+    }
+
+}
+
+//输入的数小于6    1 2 3 4 5 6
+
+// r13 -> int
+
+r12d = 0;
+
+while() {
+    rbp = r13;
+    rax = (r13);
+    rax --;
+    if(rax > 5) boom; 
+    r12d++;
+    if(r12d == 6) {
+        jump;
+    }
+    rbx = r12d;
+    do {
+        rax = rbx;
+        rax = [rsp + rax * 4]
+        if(rax == [rbp]) boom;
+        rbx ++;    
+    } while(rbx <= 5);
+
+    r13 += 4;    
+}
+
+
+
+
+
+
 
